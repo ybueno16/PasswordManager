@@ -1,0 +1,12 @@
+/home/yuri/Documentos/Dev/rust/PasswordManager/target/debug/deps/os_str_bytes-ec82fb8ee4c876d1.rmeta: /home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/lib.rs /home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/common/mod.rs /home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/common/raw.rs /home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/iter.rs /home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/pattern.rs /home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/raw_str.rs
+
+/home/yuri/Documentos/Dev/rust/PasswordManager/target/debug/deps/libos_str_bytes-ec82fb8ee4c876d1.rlib: /home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/lib.rs /home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/common/mod.rs /home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/common/raw.rs /home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/iter.rs /home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/pattern.rs /home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/raw_str.rs
+
+/home/yuri/Documentos/Dev/rust/PasswordManager/target/debug/deps/os_str_bytes-ec82fb8ee4c876d1.d: /home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/lib.rs /home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/common/mod.rs /home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/common/raw.rs /home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/iter.rs /home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/pattern.rs /home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/raw_str.rs
+
+/home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/lib.rs:
+/home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/common/mod.rs:
+/home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/common/raw.rs:
+/home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/iter.rs:
+/home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/pattern.rs:
+/home/yuri/.cargo/registry/src/github.com-1ecc6299db9ec823/os_str_bytes-6.4.1/src/raw_str.rs:
