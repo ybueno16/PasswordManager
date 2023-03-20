@@ -13,4 +13,6 @@ pub fn add_password_record(username: &str, password: &str, purpose: &str) {
     };
 
     println!("{:?}", recorder);
+
+    
 }

@@ -1,9 +1,11 @@
 use clap::{ App, Arg };
+use std::env;
 mod commands {
     pub mod add;
 }
 
 fn main() {
+    //Incialização Password Manager CLI
     let matches = App::new("Password Manager CLI")
         .author("ybueno16 - Yuri Bueno")
         .about("Gerenciador de senhas via CLI")
@@ -34,6 +36,7 @@ fn main() {
                 )
         )
         .get_matches();
+    //Adicionar valores em array para depois adicionar no BD
     if let Some(matches) = matches.subcommand_matches("add") {
         let username = matches.value_of("username").unwrap_or("");
         let password = matches.value_of("password").unwrap_or("");
