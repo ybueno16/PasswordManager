@@ -1,5 +1,4 @@
 use clap::{ App, Arg };
-use std::env;
 mod commands {
     pub mod add;
 }
@@ -43,5 +42,4 @@ fn main() {
         let purpose = matches.value_of("purpose").unwrap_or_else(|| "");
         commands::add::add_password_record(username, password, purpose);
     }
-
 }

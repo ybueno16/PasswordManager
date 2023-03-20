@@ -11,8 +11,5 @@ pub fn add_password_record(username: &str, password: &str, purpose: &str) {
         password: password.to_string(),
         purpose: purpose.to_string(),
     };
-
     println!("{:?}", recorder);
-
-    
 }
