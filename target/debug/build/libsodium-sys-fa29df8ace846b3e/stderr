@@ -286,15 +286,15 @@ ar: `u' modifier ignored since `D' is the default (see `U')
 libtool: warning: '-version-info/-version-number' is ignored for convenience libraries
 ar: `u' modifier ignored since `D' is the default (see `U')
 libtool: warning: '-version-info/-version-number' is ignored for convenience libraries
-libtool: warning: '-version-info/-version-number' is ignored for convenience libraries
 ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: warning: '-version-info/-version-number' is ignored for convenience libraries
 ar: `u' modifier ignored since `D' is the default (see `U')
 randombytes/internal/randombytes_internal_random.c:317:1: warning: ‘safe_read’ defined but not used [-Wunused-function]
   317 | safe_read(const int fd, void * const buf_, size_t size)
       | ^~~~~~~~~
 libtool: warning: '-version-info/-version-number' is ignored for convenience libraries
-ar: `u' modifier ignored since `D' is the default (see `U')
 libtool: warning: '-version-info/-version-number' is ignored for convenience libraries
+ar: `u' modifier ignored since `D' is the default (see `U')
 ar: `u' modifier ignored since `D' is the default (see `U')
 ar: `u' modifier ignored since `D' is the default (see `U')
 scalarmult2.c: In function ‘xmain’:
