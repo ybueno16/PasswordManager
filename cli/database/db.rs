@@ -16,8 +16,4 @@ pub fn create_table(conn: &Connection) -> Result<()> {
     Ok(())
 }
 
-pub fn insert_table(conn: &Connection) -> Result<()> {
-
-    
-
-}
+//pub fn insert_table(conn: &Connection) -> Result<()> {}
