@@ -1,5 +1,6 @@
 mod commands {
     pub mod add;
+    pub mod remove;
 }
 
 mod database {
@@ -44,6 +45,18 @@ fn main() -> Result<(), rusqlite::Error> {
                         .help("Propósito do login")
                 )
         )
+        .subcommand(
+            App::new("remove")
+                .about("Remover registro de usuário e senha")
+                .arg(
+                    Arg::with_name("id")
+                        .short('i')
+                        .long("id")
+                        .required(true)
+                        .takes_value(true)
+                        .help("ID do registro a ser removido")
+                )
+        )
         .get_matches();
 
     //Adicionar valores em array para depois adicionar no BD
@@ -52,11 +65,15 @@ fn main() -> Result<(), rusqlite::Error> {
         let password = matches.value_of("password").unwrap_or("");
         let purpose = matches.value_of("purpose").unwrap_or_else(|| "");
         commands::add::add_password_record(username, password, purpose);
-        conn.execute("INSERT INTO PasswordManager (username,password,purpose) VALUES (?1,?2,?3)", (
-            username,
-            password,
-            purpose,
-        ))?;
+        database::db::add_password_record(&conn, username, password, purpose)?;
+        println!("Registro adicionado com sucesso.");
+    }
+
+    if let Some(matches) = matches.subcommand_matches("remove") {
+        let id = matches.value_of("id").unwrap().parse::<i32>().unwrap();
+        commands::remove::remove(&conn, id)?;
+        println!("Registro removido com sucesso.");
+
     }
 
     Ok(())
