@@ -52,6 +52,11 @@ fn main() -> Result<(), rusqlite::Error> {
         let password = matches.value_of("password").unwrap_or("");
         let purpose = matches.value_of("purpose").unwrap_or_else(|| "");
         commands::add::add_password_record(username, password, purpose);
+        conn.execute("INSERT INTO PasswordManager (username,password,purpose) VALUES (?1,?2,?3)", (
+            username,
+            password,
+            purpose,
+        ))?;
     }
 
     Ok(())
