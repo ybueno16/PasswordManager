@@ -30,3 +30,15 @@ pub fn delete_password_record(conn: &Connection, id: i32) -> Result<()> {
     conn.execute("DELETE FROM PasswordManager WHERE id = ?", [id])?;
     Ok(())
 }
+
+pub fn get_password_record(
+    conn: &Connection,
+    id: i32,
+    username: &str,
+    password: &str,
+    purpose: &str
+) -> Result<()> {
+    conn.execute("SELECT * FROM PasswordManager", params![id, username, password, purpose])?;
+
+    Ok(())
+}

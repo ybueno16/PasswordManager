@@ -1,6 +1,7 @@
 mod commands {
     pub mod add;
     pub mod remove;
+    pub mod get;
 }
 
 mod database {
@@ -73,7 +74,14 @@ fn main() -> Result<(), rusqlite::Error> {
         let id = matches.value_of("id").unwrap().parse::<i32>().unwrap();
         commands::remove::remove(&conn, id)?;
         println!("Registro removido com sucesso.");
+    }
 
+    if let Some(matches) = matches.subcommand_matches("get") {
+        let id = matches.value_of("id").unwrap().parse::<i32>().unwrap();
+        let username = matches.value_of("username").unwrap_or("");
+        let password = matches.value_of("password").unwrap_or("");
+        let purpose = matches.value_of("purpose").unwrap_or_else(|| "");
+        commands::get::get(&conn, id, username, password, purpose);
     }
 
     Ok(())
