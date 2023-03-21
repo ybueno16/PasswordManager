@@ -15,3 +15,9 @@ pub fn create_table(conn: &Connection) -> Result<()> {
     println!("Banco de dados conectado");
     Ok(())
 }
+
+pub fn insert_table(conn: &Connection) -> Result<()> {
+
+    
+
+}
