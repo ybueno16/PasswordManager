@@ -16,22 +16,6 @@ impl PasswordRecord {
             purpose,
         }
     }
-
-    pub fn id(&self) -> i32 {
-        self.id
-    }
-
-    pub fn username(&self) -> &str {
-        &self.username
-    }
-
-    pub fn password(&self) -> &str {
-        &self.password
-    }
-
-    pub fn purpose(&self) -> &str {
-        &self.purpose
-    }
 }
 
 pub fn create_table(conn: &Connection) -> Result<()> {

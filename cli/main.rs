@@ -113,7 +113,7 @@ fn main() -> Result<(), rusqlite::Error> {
         let username = matches.value_of("username").unwrap_or("");
         let password = matches.value_of("password").unwrap_or("");
         let purpose = matches.value_of("purpose").unwrap_or("");
-        commands::list::list(&conn, id, username, password, purpose)?;
+        commands::list::list_password_record(&conn)?;
     }
 
     Ok(())
