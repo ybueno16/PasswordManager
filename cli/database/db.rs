@@ -1,5 +1,5 @@
 use rusqlite::{ params, Connection, Result };
-
+pub mod db;
 pub fn create_table(conn: &Connection) -> Result<()> {
     conn.execute(
         "CREATE TABLE IF NOT EXISTS PasswordManager (

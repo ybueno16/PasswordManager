@@ -1,6 +1,4 @@
-mod database{
-    pub db;
-}
+use crate::database::db::get_password_record;
 use rusqlite::{ Connection, Result };
 
 pub fn get(
