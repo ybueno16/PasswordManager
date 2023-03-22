@@ -1,9 +1,8 @@
 mod commands {
     pub mod add;
     pub mod remove;
-    pub mod get;
+    pub mod list;
 }
-
 mod database {
     pub mod db;
 }
@@ -58,8 +57,39 @@ fn main() -> Result<(), rusqlite::Error> {
                         .help("ID do registro a ser removido")
                 )
         )
-
-        //Colocar comando get
+        .subcommand(
+            App::new("list")
+                .about("Obter registro de usuário e senha")
+                .arg(
+                    Arg::with_name("id")
+                        .short('i')
+                        .long("id")
+                        .required(true)
+                        .takes_value(true)
+                        .help("ID do registro a ser obtido")
+                )
+                .arg(
+                    Arg::with_name("username")
+                        .short('u')
+                        .long("username")
+                        .takes_value(true)
+                        .help("Nome de usuário")
+                )
+                .arg(
+                    Arg::with_name("password")
+                        .short('p')
+                        .long("password")
+                        .takes_value(true)
+                        .help("Senha")
+                )
+                .arg(
+                    Arg::with_name("purpose")
+                        .short('r')
+                        .long("purpose")
+                        .takes_value(true)
+                        .help("Propósito do login")
+                )
+        )
         .get_matches();
 
     //Adicionar valores em array para depois adicionar no BD
@@ -78,12 +108,12 @@ fn main() -> Result<(), rusqlite::Error> {
         println!("Registro removido com sucesso.");
     }
 
-    if let Some(matches) = matches.subcommand_matches("get") {
+    if let Some(matches) = matches.subcommand_matches("list") {
         let id = matches.value_of("id").unwrap().parse::<i32>().unwrap();
         let username = matches.value_of("username").unwrap_or("");
         let password = matches.value_of("password").unwrap_or("");
-        let purpose = matches.value_of("purpose").unwrap_or_else(|| "");
-        commands::get::get(&conn, id, username, password, purpose);
+        let purpose = matches.value_of("purpose").unwrap_or("");
+        commands::list::list(&conn, id, username, password, purpose)?;
     }
 
     Ok(())
