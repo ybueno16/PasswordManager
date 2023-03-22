@@ -57,39 +57,7 @@ fn main() -> Result<(), rusqlite::Error> {
                         .help("ID do registro a ser removido")
                 )
         )
-        .subcommand(
-            App::new("list")
-                .about("Obter registro de usuário e senha")
-                .arg(
-                    Arg::with_name("id")
-                        .short('i')
-                        .long("id")
-                        .required(true)
-                        .takes_value(true)
-                        .help("ID do registro a ser obtido")
-                )
-                .arg(
-                    Arg::with_name("username")
-                        .short('u')
-                        .long("username")
-                        .takes_value(true)
-                        .help("Nome de usuário")
-                )
-                .arg(
-                    Arg::with_name("password")
-                        .short('p')
-                        .long("password")
-                        .takes_value(true)
-                        .help("Senha")
-                )
-                .arg(
-                    Arg::with_name("purpose")
-                        .short('r')
-                        .long("purpose")
-                        .takes_value(true)
-                        .help("Propósito do login")
-                )
-        )
+
         .get_matches();
 
     //Adicionar valores em array para depois adicionar no BD
