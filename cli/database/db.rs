@@ -38,7 +38,10 @@ pub fn get_password_record(
     password: &str,
     purpose: &str
 ) -> Result<()> {
-    conn.execute("SELECT * FROM PasswordManager", params![id, username, password, purpose])?;
+    conn.execute(
+        "SELECT * FROM PasswordManager WHERE id = ?1 AND username = ?2 AND password = ?3 AND purpose = ?4",
+        params![id, username, password, purpose]
+    )?;
 
     Ok(())
 }
