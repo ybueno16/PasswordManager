@@ -1,7 +1,6 @@
 mod commands {
     pub mod add;
     pub mod remove;
-    pub mod list;
 }
 mod database {
     pub mod db;
@@ -74,14 +73,6 @@ fn main() -> Result<(), rusqlite::Error> {
         let id = matches.value_of("id").unwrap().parse::<i32>().unwrap();
         commands::remove::remove(&conn, id)?;
         println!("Registro removido com sucesso.");
-    }
-
-    if let Some(matches) = matches.subcommand_matches("list") {
-        let id = matches.value_of("id").unwrap().parse::<i32>().unwrap();
-        let password_records = commands::list::list_password_record(&conn)?;
-        for password_record in password_records {
-            println!("{:?}", password_record);
-        }
     }
 
     Ok(())

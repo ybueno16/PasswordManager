@@ -1,22 +1,6 @@
 use rusqlite::{ params, Connection, Result };
-use anyhow::{Error as AnyhowError, Result};
-pub struct PasswordRecord {
-    id: i32,
-    username: String,
-    password: String,
-    purpose: String,
-}
+use bcrypt::{hash, DEFAULT_COST};
 
-impl PasswordRecord {
-    pub fn new(id: i32, username: String, password: String, purpose: String) -> Self {
-        PasswordRecord {
-            id,
-            username,
-            password,
-            purpose,
-        }
-    }
-}
 
 pub fn create_table(conn: &Connection) -> Result<()> {
     conn.execute(
@@ -48,3 +32,4 @@ pub fn delete_password_record(conn: &Connection, id: i32) -> Result<()> {
     conn.execute("DELETE FROM PasswordManager WHERE id = ?", [id])?;
     Ok(())
 }
+
