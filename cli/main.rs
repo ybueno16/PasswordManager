@@ -58,6 +58,8 @@ fn main() -> Result<(), rusqlite::Error> {
                         .help("ID do registro a ser removido")
                 )
         )
+
+        //Colocar comando get
         .get_matches();
 
     //Adicionar valores em array para depois adicionar no BD
