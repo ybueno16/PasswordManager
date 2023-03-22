@@ -1,5 +1,5 @@
 use rusqlite::{ params, Connection, Result };
-
+use anyhow::{Error as AnyhowError, Result};
 pub struct PasswordRecord {
     id: i32,
     username: String,
@@ -49,9 +49,9 @@ pub fn delete_password_record(conn: &Connection, id: i32) -> Result<()> {
     Ok(())
 }
 
-pub fn list_password_record(conn: &Connection) -> Result<Vec<PasswordRecord>> {
-    let mut stmt = conn.prepare("SELECT * FROM PasswordManager")?;
-    let records = stmt.query_map([], |row| {
+pub fn list_password_record(conn: &Connection, id: i32) -> Result<Vec<PasswordRecord>> {
+    let mut stmt = conn.prepare("SELECT id, username, password, purpose FROM password_records WHERE id = ?1")?;
+    let password_iter = stmt.query_map([id], |row| {
         Ok(PasswordRecord {
             id: row.get(0)?,
             username: row.get(1)?,
@@ -60,9 +60,14 @@ pub fn list_password_record(conn: &Connection) -> Result<Vec<PasswordRecord>> {
         })
     })?;
 
-    let mut result = vec![];
-    for record in records {
-        result.push(record?);
+    let mut password_records = Vec::new();
+    for password in password_iter {
+        password_records.push(password?);
     }
-    Ok(result)
+
+    if password_records.is_empty() {
+        return Err(anyhow::Error::msg(format!("No password record found with ID {}", id)));
+    }
+
+    Ok(password_records)
 }

@@ -110,10 +110,10 @@ fn main() -> Result<(), rusqlite::Error> {
 
     if let Some(matches) = matches.subcommand_matches("list") {
         let id = matches.value_of("id").unwrap().parse::<i32>().unwrap();
-        let username = matches.value_of("username").unwrap_or("");
-        let password = matches.value_of("password").unwrap_or("");
-        let purpose = matches.value_of("purpose").unwrap_or("");
-        commands::list::list_password_record(&conn)?;
+        let password_records = commands::list::list_password_record(&conn)?;
+        for password_record in password_records {
+            println!("{:?}", password_record);
+        }
     }
 
     Ok(())
