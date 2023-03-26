@@ -1,0 +1,1 @@
+/home/yuri/Documentos/Dev/PasswordManager/target/debug/password-manager-cli: /home/yuri/Documentos/Dev/PasswordManager/src/commands/add.rs /home/yuri/Documentos/Dev/PasswordManager/src/commands/remove.rs /home/yuri/Documentos/Dev/PasswordManager/src/database/db.rs /home/yuri/Documentos/Dev/PasswordManager/src/main.rs

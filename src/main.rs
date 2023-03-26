@@ -5,7 +5,6 @@ mod commands {
 mod database {
     pub mod db;
 }
-
 use clap::{ App, Arg };
 use rusqlite::{ Connection, Result };
 use database::db::create_table;
@@ -75,4 +74,7 @@ fn main() -> Result<(), rusqlite::Error> {
     }
 
     Ok(())
+
+
+
 }
